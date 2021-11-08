@@ -1,0 +1,28 @@
+
+using System;
+class HelloWorld {
+  static void Main() {
+      Console.Write("Введите N: ");
+      int N = Convert.ToInt32(Console.ReadLine());
+      int sum = 0;
+      int count = 0;
+      int k = 1;
+        
+        if (N>=5)
+        {
+            sum+=3;
+            sum+=5;
+            count+=2;
+        }
+        while (6*k+1<N)
+        {
+            sum+=(6*k-1);
+            sum+=(6*k+1);
+            count+=2;
+            k+=1;
+            
+        }
+        Console.WriteLine("Сумма = " + sum);
+        Console.WriteLine("Количество = " + count);
+  }
+}
