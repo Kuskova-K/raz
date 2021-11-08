@@ -1,0 +1,30 @@
+using System;
+    class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Введите n: ");
+        var n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите элементы через пробел: ");
+        var D = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+        int sum = 0;
+        
+        for (int i = 0; i < D.Length; i++)
+        {
+            if (i % 2 != 0)
+            {
+                sum+=D[i];
+            }
+        }
+        
+        Console.Write("Массив: ");
+        
+        for (int i = 0; i < D.Length; i++)
+        {
+            Console.Write(D[i] + " ");
+        }
+        
+        Console.Write("\nСумма: ");
+        Console.Write(sum);
+    }
+}
