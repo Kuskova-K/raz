@@ -1,0 +1,12 @@
+
+using System;
+class HelloWorld {
+  static void Main() {
+        for(int i = 2; i <= 6;i++)
+        {
+            for(int j=2; j <= 6;j++)
+                Console.Write(i*j+ "\t");
+            Console.WriteLine();
+        }
+  }
+}
