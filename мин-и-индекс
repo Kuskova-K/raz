@@ -1,0 +1,29 @@
+using System;
+    class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Введите количество элементов: ");
+        var n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите элементы через пробел: ");
+        var array = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+        
+        int min = array[0];
+        int ind = 0;
+        
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (min < array[i])
+            {
+                min = array[i];
+                ind = i;
+            }
+        }
+        
+        Console.Write("Минимальное число: ");
+        Console.Write(min);
+        Console.Write("\nИндекс: ");
+        Console.Write(ind);
+    }
+        
+}
