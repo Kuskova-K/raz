@@ -1,0 +1,44 @@
+using System;
+    class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Введите количество элементов: ");
+        var n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите элементы через пробел: ");
+        var array = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+        var arrPos = new int[array.Length];
+        var arrNeg = new int[array.Length];
+        int ipos = 0;
+        int ineg = 0;
+        
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i]>0)
+            {
+                arrPos[ipos] = array[i];
+                ipos+=1;
+            }
+            
+            if (array[i]<=0)
+            {
+                arrNeg[ineg] = array[i];
+                ineg+=1;
+            }
+        }
+        
+        Array.Resize(ref arrPos, ipos);
+        Array.Resize(ref arrNeg, ineg);
+        
+        Console.Write("Массив с положительными элементами: ");
+        for (int i = 0; i < arrPos.Length; i++)
+        {
+            Console.Write(arrPos[i]+" ");
+        }
+        Console.Write("\nМассив с отрицательными элементами: ");
+        for (int i = 0; i < arrNeg.Length; i++)
+        {
+            Console.Write(arrNeg[i]+" ");
+        }
+    }
+}
