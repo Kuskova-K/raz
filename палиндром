@@ -1,0 +1,21 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.Write("Введите строку:");
+    string n = Console.ReadLine();
+    string c = "";
+    
+    for (int i = n.Length - 1; i >= 0; i--)
+    {
+        c+= n[i];
+    }
+    if (n == c)
+    {
+        Console.Write("Является палиндромом");
+    }
+    else
+    {
+        Console.Write("Не является палиндромом");
+    }
+  }
+}
