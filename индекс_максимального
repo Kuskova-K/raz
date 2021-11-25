@@ -1,0 +1,18 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.Write("Введите массив через пробелы: ");
+    var n = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+    int max = n[0];
+    int ind = 0;
+    for (var i = 1; i<n.Length; i++)
+    {
+      if (n[i] > max)
+      {
+        ind = i;
+        max = n[i];
+       }
+      }
+  Console.Write("Индекс максимального: " + ind);
+  }
+}
