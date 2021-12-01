@@ -1,0 +1,15 @@
+using System;
+class Program {
+  static void Perimeter(int a, int b, int c)
+  {
+    var per = a+b+c;
+    Console.WriteLine(per);
+   }
+  static void Main(string[] args)
+  {
+    int a = int.Parse(Console.ReadLine());
+    int b = int.Parse(Console.ReadLine());
+    int c = int.Parse(Console.ReadLine());
+    Perimeter(a, b, c);
+  }
+} 
