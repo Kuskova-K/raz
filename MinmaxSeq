@@ -1,0 +1,42 @@
+using System;
+class Program
+  {
+    static void  MinmaxSeq(int[] array, ref int max, ref int min)
+    {
+      for (int i = 0; i < array.Length;i++)
+            {
+                if (max < array[i])
+                {
+                    max = array[i];
+                }
+                if (min > array[i])
+                {
+                    min = array[i];
+                }
+            }
+    }
+    
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введите последовательность цисел, заканчивающуюся 0");
+        string seq = "";
+        string sym = Console.ReadLine();
+        while (sym != "0")
+        {
+            seq = seq + sym + " ";
+            sym = Console.ReadLine();
+        }
+        seq = seq.Remove(seq.Length - 1);
+        
+        var array = Array.ConvertAll(seq.Split(' '), s => int.Parse(s));
+        
+        int max = array[0];
+        int min = array[0];
+        
+        MinmaxSeq(array, ref max, ref min);
+        
+        Console.WriteLine($"Минимальное: {min}");
+        Console.WriteLine($"Максимальное: {max}");
+        Console.ReadLine();
+    }
+}
