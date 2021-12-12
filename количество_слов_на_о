@@ -1,0 +1,22 @@
+
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.Write("Введите строку:");
+    string str = Console.ReadLine();
+    int count = 0;
+    if (str[0] == 'о' || str[0] == 'О')
+    { 
+        count++;
+    }
+    for (int i = 1; i < str.Length; i++)
+    {
+        if (str[i] == 'о' && str[i-1] == ' ')
+        {
+            count++;
+        }
+    }
+    Console.Write("Количество слов начинающиххся на о: ");
+    Console.Write(count);
+  }
+}
